@@ -70,14 +70,14 @@ class _LoginPageState extends State<LoginPage> {
                 style: TextButton.styleFrom(
                     minimumSize: Size(200, 50), shape: StadiumBorder()),
                 onPressed: () async{
-                  clearText();
                   SharedPreferences preferences = await SharedPreferences.getInstance();
-                  preferences.setString('email', emailController.text);
                   if(emailController.text.isNotEmpty && passwordController.text.isNotEmpty){
                     authController.loginUser(context, emailController.text, passwordController.text);
                   }else{
                     authController.catchError(context, 'Something wrong');
                   }
+                  preferences.setString('email', emailController.text);
+
 
                 },
                 child: Text(
