@@ -19,6 +19,7 @@ class ShowMessagePage extends StatelessWidget {
           );
         }
         return ListView.builder(
+          physics: ScrollPhysics(),
           shrinkWrap: true,
           primary: true,
           itemCount: snapshot.data!.docs.length,

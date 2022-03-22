@@ -48,20 +48,20 @@ class _ChatScreenPageState extends State<ChatScreenPage> {
         ],
       ),
       body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            // Text(
+            //   'Message',
+            //   textScaleFactor: 1.5,
+            //   style: TextStyle(fontWeight: FontWeight.bold),
+            // ),
+            // SizedBox(height: 200,),
             Container(
-              alignment: Alignment.center,
-              child: Text(
-                'Message',
-                textScaleFactor: 1.5,
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(height: 200,),
-            ShowMessagePage(),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                    child: ShowMessagePage())),
             Row(
               children: [
                 Expanded(
